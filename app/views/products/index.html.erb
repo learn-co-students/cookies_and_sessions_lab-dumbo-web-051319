@@ -1,0 +1,19 @@
+<p>Cart</p>
+
+<% if @cart %>
+  <ul>
+    <% @cart.compact.each do |product| %>
+      <li>
+        <%= product %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_tag "/" do%>
+
+  <label> Product </label>
+  <input type="text" name="product">
+  <input type="submit" value="add to cart">
+
+<% end %>
