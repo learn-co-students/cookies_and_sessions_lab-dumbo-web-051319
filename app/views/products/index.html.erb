@@ -1,0 +1,21 @@
+<h1>Please Work</h1>
+<h4>Your Cart</h4>
+
+<!-- regular ole ruby stuff -->
+<ul>
+  <% cart.each do |x|  %>
+    <li>
+      <%= x %>
+    </li>
+  <% end  %>
+</ul>
+
+
+<!-- first define the controller action -->
+<!-- then create a form using form tag with a key of 'product' to find in your params -->
+
+<%= form_tag(controller: "products", action: "add", method: "post") do %>
+  <label>Product:</label><br>
+  <%= text_field_tag :'product' %>
+  <%= submit_tag "add to cart" %>
+<% end %>
